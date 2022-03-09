@@ -5,6 +5,8 @@
  */
 package projetjava;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Coline
@@ -12,13 +14,19 @@ package projetjava;
 public class Personne {
     protected String nom;
     protected String prenom;
-    private int dateDeNaissance;
+    private LocalDate dateDeNaissance;
 
-    public Personne(String nom, String prenom, int dateDeNaissance) {
+    public Personne(String nom, String prenom, LocalDate dateDeNaissance) {
         this.nom = nom;
         this.prenom = prenom;
-        this.dateDeNaissance = dateDeNaissance;
+        this.dateDeNaissance = dateDeNaissance ;
     }
+
+    @Override
+    public String toString() {
+        return nom + " " + prenom + " ; " + dateDeNaissance ;
+    }
+    
     
     
 }

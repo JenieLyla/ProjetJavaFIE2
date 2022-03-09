@@ -5,18 +5,20 @@
  */
 package projetjava;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Coline
  */
 public class Patient extends Personne implements Comparable<Patient> {
 
-    private int numeroSecuriteSociale;
+    private long numeroSecuriteSociale;
     private int age;
-    private int numeroTelephone;
+    private long numeroTelephone;
     private String adresseMail;
 
-    public Patient(String nom, String prenom, int dateDeNaissance) {
+    public Patient(String nom, String prenom, LocalDate dateDeNaissance, long numeroSecuriteSociale, long numeroTelephone) {
         super(nom, prenom, dateDeNaissance);
         this.adresseMail = adresseMail;
         this.age = age;
@@ -39,5 +41,11 @@ public class Patient extends Personne implements Comparable<Patient> {
     public String getPrenom() {
         return prenom;
     }
+
+    @Override
+    public String toString() {
+        return "Patient : " + super.toString() + numeroSecuriteSociale + " ; " + age + " ans ; " + numeroTelephone + " ; " + adresseMail + "/n";
+    }
+    
     
 }

@@ -6,6 +6,7 @@
 package projetjava;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -13,19 +14,19 @@ import java.text.SimpleDateFormat;
  */
 public class RdV {
 
-    protected static final SimpleDateFormat DateHeureDebut = new SimpleDateFormat("dd/MM/yyyy hh:mm");
-    protected static final SimpleDateFormat DateHeureFin = new SimpleDateFormat("dd/MM/yyyy hh:mm");
-    private Medecin medecin;
     private Patient patient;
+    private LocalDateTime dateHeureDebut ;
+    private LocalDateTime dateHeureFin ;
 
-    public RdV(String DateHeureDebut, String DateHeureFin, Medecin medecin, Patient patient) {
-        this.medecin = medecin;
+    public RdV(LocalDateTime dateHeureDebut, LocalDateTime dateHeureFin, Patient patient) throws HoraireException{
         this.patient = patient;
+        this.dateHeureDebut = dateHeureDebut ;
+        this.dateHeureFin = dateHeureFin ;
     }
 
     @Override
     public String toString() {
-        return "RDV : " + patient + " avec docteur " + medecin + " aura lieu de " + DateHeureDebut + " à " + DateHeureFin;
+        return "RDV : " + patient + " avec docteur " + " aura lieu de " + dateHeureDebut + " à " + dateHeureFin;
     }
 
 }

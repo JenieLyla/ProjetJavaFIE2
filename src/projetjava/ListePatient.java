@@ -13,19 +13,18 @@ import java.util.TreeSet;
  *
  * @author Coline
  */
-public abstract class ListePatient extends TreeSet implements Comparable<Patient> {
+public abstract class ListePatient extends TreeSet<Patient> implements Comparable<Patient> {
 
-    private TreeSet<Patient> lesPatients;
 
-    public ListePatient(TreeSet<Patient> lesPatients) {
-        this.lesPatients = lesPatients;
+    public ListePatient() {
+        super();
 
     }
-
+//Permet d'associer un couple de nom/prénom à un dossier patient
     public Patient FindPatientByName(String nom, String prenom) {
         ArrayList patientMemeNom = new ArrayList();
         ;
-        for (Patient p : lesPatients) {
+        for (Patient p : this) {
             if ((p.getNom().equals(nom)) && (p.getPrenom().equals(prenom))) {
                 patientMemeNom.add(p);
             }

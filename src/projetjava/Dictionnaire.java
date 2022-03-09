@@ -11,11 +11,10 @@ import java.util.HashMap;
  *
  * @author Coline
  */
-public class Dictionnaire {
-    private HashMap<Medecin, Carnet> leDictionnaire ;
+public class Dictionnaire extends HashMap<Medecin, Carnet> {
 
-    public Dictionnaire(HashMap<Medecin, Carnet> leDictionnaire) {
-        this.leDictionnaire = leDictionnaire;
+    public Dictionnaire() {
+        super();
     }
     
     

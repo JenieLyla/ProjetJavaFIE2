@@ -5,6 +5,8 @@
  */
 package projetjava;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Coline
@@ -12,9 +14,14 @@ package projetjava;
 public class Medecin extends Personne{
     
     private String profession ;
-    public Medecin(String nom, String prenom, int dateDeNaissance, String profession) {
+    public Medecin(String nom, String prenom, LocalDate dateDeNaissance, String profession) {
         super(nom, prenom, dateDeNaissance);
         this.profession = profession ;
+    }
+
+    @Override
+    public String toString() {
+        return "Medecin : " + super.toString() + " ; " + profession + "/n";
     }
     
 }

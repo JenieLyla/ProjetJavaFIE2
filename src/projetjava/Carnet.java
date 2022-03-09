@@ -5,10 +5,6 @@
  */
 package projetjava;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Scanner;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
@@ -24,23 +20,23 @@ public class Carnet extends TreeSet<RdV> {
 
     }
 
-    public Carnet(TreeSet<RdV> lesRdV, Comparator<? super RdV> comparator) {
-        super(comparator);
-        this.lesRdV = lesRdV;
+//    public Carnet(TreeSet<RdV> lesRdV, Comparator<? super RdV> comparator) {
+//        super(comparator);
+//        this.lesRdV = lesRdV;
+//    }
+//
+//    public Carnet(TreeSet<RdV> lesRdV, Collection<? extends RdV> c) {
+//        super(c);
+//        this.lesRdV = lesRdV;
+//    }
+//
+//    public Carnet(TreeSet<RdV> lesRdV, SortedSet<RdV> s) {
+//        super(s);
+//        this.lesRdV = lesRdV;
     }
 
-    public Carnet(TreeSet<RdV> lesRdV, Collection<? extends RdV> c) {
-        super(c);
-        this.lesRdV = lesRdV;
-    }
-
-    public Carnet(TreeSet<RdV> lesRdV, SortedSet<RdV> s) {
-        super(s);
-        this.lesRdV = lesRdV;
-    }
-
-    public void newRdV(Medecin medecin, Patient patient, String DateHeureDebut,String DateHeureFin) {
-        RdV rdv = new RdV(DateHeureDebut, DateHeureFin, medecin, patient);
+    public void newRdV(Patient patient, LocalDateTime DateHeureDebut,LocalDateTime DateHeureFin) {
+        RdV rdv = new RdV(DateHeureDebut, DateHeureFin, patient);
     }
     
     
